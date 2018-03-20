@@ -165,7 +165,58 @@ int main()
 	*/	
 	//else
 	//	{
+			for(j = 0; j < time_quantum; j++)
+			{
+				
+				//Arrival Department Start
+				for(k = 0; k < number_of_process; k++)
+				{
+					if(p[k].arrival_time == time)
+					{
+						p[k].process_readyqueue_status = 0;
+						qinsert(&p[k]);
+						printf("\n Process %c is inserted in the Ready Queue.\n",p[k].process_name);
+						
+					}
+				}
+				
+			ready_queue[front]->burst_time = ready_queue[front]->burst_time - 1;
+			time = time + 1;
+			 
+			//Selecting Process from the Ready Queue
+			if(ready_queue[front]->burst_time==0)
+			{
+				printf("\nProcess %c is Finished.\n",ready_queue[front]->process_name);
+				printf("\nProcess %c is Finishing Time: %d.\n",ready_queue[front]->process_name,time);
 			
+				ready_queue[front]->turn_around_time = time - ready_queue[front]->arrival_time;
+				
+				
+				ready_queue[front]->process_completion_status = 0;
+				flag = flag + 1;
+			qdelete();	
+			}
+			
+
+				//Arrival Finish
+				
+				//time = time + 1;
+				//if(ready_queue[front].burst_time)
+				
+			}
+			
+			if(ready_queue[front]->burst_time > 0)
+		{
+			struct ProcessControlBlock *last = &ready_queue[front];
+			
+			qdelete();
+			qinsert(&last);
+			
+		}
+
+		
+							}
+	//}
 	
 int m;
 for(m=0;m<number_of_process;m++)
