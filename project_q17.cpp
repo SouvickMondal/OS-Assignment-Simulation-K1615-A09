@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//Author: SOuvick Mondal
 struct ProcessControlBlock
 {
 	int at,bt,id,wtime;

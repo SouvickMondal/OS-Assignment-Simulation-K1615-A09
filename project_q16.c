@@ -8,7 +8,7 @@
 //Compute the total time for which processes were in the queue waiting for the processor. 
 //Take the input for CPU burst, arrival time and time quantum from the user. 
  
-
+//Author: SOuvick Mondal
 
 
 #include<stdio.h>
