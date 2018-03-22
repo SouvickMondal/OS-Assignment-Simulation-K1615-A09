@@ -83,4 +83,18 @@ int main()
 	cout<<"Average Turn Around Time: "<<(float)(totalturnaround)/n<<endl;
 	cout<<"Average Waiting Time: "<<(float)(totalwaiting)/n<<endl;
 }
-
+void sort(ProcessControlBlock *readyqueue[10],int n)
+{
+	for(int i=0;i<n-1;i++)
+	{
+		for(int j=0;j<n-i-1;j++)
+		{
+			if(readyqueue[j]->bt>readyqueue[j+1]->bt)
+			{
+				ProcessControlBlock *temp=readyqueue[j];
+				readyqueue[j]=readyqueue[j+1];
+				readyqueue[j+1]=temp;
+			}
+		}
+	}
+}
